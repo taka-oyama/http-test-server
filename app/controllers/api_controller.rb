@@ -38,7 +38,7 @@ class ApiController < ApplicationController
   def random
     chars = [*('A'..'Z'), *('a'..'z'), *('0'..'9')]
     length = (params[:length] || 1000).to_i
-    string = length.times.map { chars.sample(length) }.join
+    string = length.times.map { chars.sample }.join
 
     respond_to do |format|
       format.html    { render body: string }
